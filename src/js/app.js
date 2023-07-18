@@ -3,10 +3,11 @@ import fetchData from './http';
 export default function getLevel(userId) {
   const response = fetchData(`https://server/user/${userId}`);
 
-  // TODO: логика обработки здесь
   if (response.status === 'ok') {
     return `Ваш текущий уровень: ${response.level}`;
   }
-
-  return 'Информация об уровне временно недоступна';
+  if (response.status === 'false') {
+    return 'Информация об уровне временно недоступна';
+  }
+  return 'Неизвестный статус';
 }

@@ -1,4 +1,3 @@
-export default function fetchData(url) { // в качестве аргумента для вызова надо использовать url
-  console.log(url);
-  throw new Error('Mock this!');
+export default function fetchData() { // в качестве аргумента для вызова надо использовать url
+  return { status: 'ok', level: 10 };
 }
